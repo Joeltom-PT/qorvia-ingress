@@ -6,76 +6,69 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, OPTIONS"
     nginx.ingress.kubernetes.io/cors-allow-headers: "*"
-    nginx.ingress.kubernetes.io/cors-expose-headers: "*"
 spec:
   ingressClassName: nginx
   rules:
-  - host: camcorderio.shop
-    http:
-      paths:
-      - path: /account(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: account-service
-            port:
-              number: 80
-
-      - path: /reviews(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: blog-feedback-service
-            port:
-              number: 80
-
-      - path: /report(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: blog-feedback-service
-            port:
-              number: 80
-
-      - path: /communication(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: communication-service
-            port:
-              number: 80
-
-      - path: /event(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: event-management-service
-            port:
-              number: 80
-
-      - path: /notification(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: notification-service
-            port:
-              number: 80
-
-      - path: /payment(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: payment-service
-            port:
-              number: 80
-
-      - path: /payout-policy(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: payment-service
-            port:
-              number: 80
+    - host: camcorderio.shop
+      http:
+        paths:
+          - path: /account(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: account-service-service
+                port:
+                  number: 80
+          - path: /reviews(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: blog-feedback-service-service
+                port:
+                  number: 80
+          - path: /report(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: blog-feedback-service-service
+                port:
+                  number: 80
+          - path: /communication(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: communication-service-service
+                port:
+                  number: 80
+          - path: /event(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: event-management-service-service
+                port:
+                  number: 80
+          - path: /notification(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: notification-service-service
+                port:
+                  number: 80
+          - path: /payment(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: payment-service-service
+                port:
+                  number: 80
+          - path: /payout-policy(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: payment-service-service
+                port:
+                  number: 80
