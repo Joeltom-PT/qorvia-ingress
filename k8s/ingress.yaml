@@ -13,8 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: camcorderio.shop
-      http:
+    - http:
         paths:
           - path: /account(/|$)(.*)
             pathType: Prefix
