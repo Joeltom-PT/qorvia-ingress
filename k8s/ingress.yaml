@@ -5,7 +5,6 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/enable-cors: "true"
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
     nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, OPTIONS"
@@ -15,59 +14,45 @@ spec:
   rules:
     - http:
         paths:
-          - path: /account
+          - path: /account(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: account-service-service
                 port:
-                  number: 80
-          - path: /reviews
+                  number: 8080
+          - path: /reviews(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: blog-feedback-service-service
                 port:
-                  number: 80
-          - path: /report
-            pathType: Prefix
-            backend:
-              service:
-                name: blog-feedback-service-service
-                port:
-                  number: 80
-          - path: /communication
+                  number: 8080
+          - path: /communication(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: communication-service-service
                 port:
-                  number: 80
-          - path: /event
+                  number: 8080
+          - path: /event(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: event-management-service-service
                 port:
-                  number: 80
-          - path: /notification
+                  number: 8080
+          - path: /notification(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: notification-service-service
                 port:
-                  number: 80
-          - path: /payment
+                  number: 8080
+          - path: /payment(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: payment-service-service
                 port:
-                  number: 80
-          - path: /payout-policy
-            pathType: Prefix
-            backend:
-              service:
-                name: payment-service-service
-                port:
-                  number: 80
+                  number: 8080
