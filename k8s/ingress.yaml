@@ -19,55 +19,55 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: account-service-service
+                name: account-service
                 port:
                   number: 80
           - path: /reviews
             pathType: Prefix
             backend:
               service:
-                name: blog-feedback-service-service
+                name: blog-feedback-service
                 port:
                   number: 80
           - path: /report
             pathType: Prefix
             backend:
               service:
-                name: blog-feedback-service-service
+                name: blog-feedback-service
                 port:
                   number: 80
           - path: /communication
             pathType: Prefix
             backend:
               service:
-                name: communication-service-service
+                name: communication-service
                 port:
                   number: 80
           - path: /event
             pathType: Prefix
             backend:
               service:
-                name: event-management-service-service
+                name: event-management-service
                 port:
                   number: 80
           - path: /notification
             pathType: Prefix
             backend:
               service:
-                name: notification-service-service
+                name: notification-service
                 port:
                   number: 80
           - path: /payment
             pathType: Prefix
             backend:
               service:
-                name: payment-service-service
+                name: payment-service
                 port:
                   number: 80
           - path: /payout-policy
             pathType: Prefix
             backend:
               service:
-                name: payment-service-service
+                name: payment-service
                 port:
                   number: 80
